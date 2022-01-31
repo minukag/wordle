@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle by Minukag</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/app.css">
+    <script src="app.js"></script>
+    <script src="ui.js"></script>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <h1>WORDLE</h1>
+            <h5>BY MINUKAG</h5>
+        </div>
+
+        <div class="grid">
+            <div class="grid-row">
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+                <div class="grid-square">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="keyboard">
+            <div class="kb-row">
+                <div class="kb-key" id="kb-key-q">
+                    <span>q</span>
+                </div>
+                <div class="kb-key" id="kb-key-w">
+                    <span>w</span>
+                </div>
+                <div class="kb-key" id="kb-key-e">
+                    <span>e</span>
+                </div>
+                <div class="kb-key" id="kb-key-r">
+                    <span>r</span>
+                </div>
+                <div class="kb-key" id="kb-key-t">
+                    <span>t</span>
+                </div>
+                <div class="kb-key" id="kb-key-y">
+                    <span>y</span>
+                </div>
+                <div class="kb-key" id="kb-key-u">
+                    <span>u</span>
+                </div>
+                <div class="kb-key" id="kb-key-i">
+                    <span>i</span>
+                </div>
+                <div class="kb-key" id="kb-key-o">
+                    <span>o</span>
+                </div>
+                <div class="kb-key" id="kb-key-p">
+                    <span>p</span>
+                </div>
+            </div>
+
+            <div class="kb-row">
+                <div class="kb-key" id="kb-key-a">
+                    <span>a</span>
+                </div>
+                <div class="kb-key" id="kb-key-s">
+                    <span>s</span>
+                </div>
+                <div class="kb-key" id="kb-key-d">
+                    <span>d</span>
+                </div>
+                <div class="kb-key" id="kb-key-f">
+                    <span>f</span>
+                </div>
+                <div class="kb-key" id="kb-key-g">
+                    <span>g</span>
+                </div>
+                <div class="kb-key" id="kb-key-h">
+                    <span>h</span>
+                </div>
+                <div class="kb-key" id="kb-key-j">
+                    <span>j</span>
+                </div>
+                <div class="kb-key" id="kb-key-k">
+                    <span>k</span>
+                </div>
+                <div class="kb-key" id="kb-key-l">
+                    <span>l</span>
+                </div>
+            </div>
+
+            <div class="kb-row">
+                <div class="kb-key" id="kb-key-z">
+                    <span>z</span>
+                </div>
+                <div class="kb-key" id="kb-key-x">
+                    <span>x</span>
+                </div>
+                <div class="kb-key" id="kb-key-c">
+                    <span>c</span>
+                </div>
+                <div class="kb-key" id="kb-key-v">
+                    <span>v</span>
+                </div>
+                <div class="kb-key" id="kb-key-b">
+                    <span>b</span>
+                </div>
+                <div class="kb-key" id="kb-key-n">
+                    <span>n</span>
+                </div>
+                <div class="kb-key" id="kb-key-m">
+                    <span>m</span>
+                </div>
+            </div>
+        </div>
+    </main> 
+</body>
+</html>

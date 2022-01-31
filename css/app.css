@@ -1,0 +1,119 @@
+:root {
+    --bg-col: #02034f;
+    --bg-light-col: #553965;
+    --accent-dark-col: #8b4468;
+    --accent-col: #ff6565;
+    --green-col: #00c9a2;
+    --yellow-col: #f9f871;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: var(--bg-col);
+}
+
+main {
+    height: 95vh;
+    margin: 2.5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+::selection {
+    background-color: var(--accent-col);
+    color: var(--bg-col)
+}
+
+.header {
+    color: var(--accent-col);
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.grid-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-square {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 4px;
+    margin: .2rem;
+    background-color: var(--bg-light-col);
+    color: var(--accent-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.kb-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kb-key {
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: var(--bg-light-col);
+    color: var(--accent-col);
+    margin: .5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.g-1 {
+    background-color: var(--accent-dark-col);
+    color: var(--bg-col);
+}
+
+.g-2 {
+    background-color: var(--yellow-col);
+    color: var(--bg-col);
+}
+
+.g-3 {
+    background-color: var(--green-col);
+    color: var(--bg-col);
+}
+
+.animate-beat-in-out {
+    animation: beat-in-out .2s ease;
+}
+
+.animate-beat-out-in {
+    animation: beat-in-out .2s ease;
+    animation-direction: reverse;
+}
+
+@keyframes beat-in-out {
+    0%      { transform: scale(1); }
+    25%     { transform: scale(.95); }
+    75%     { transform: scale(1.05); }
+    100%    { transform: scale(1); }
+}
