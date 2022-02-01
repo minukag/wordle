@@ -6,6 +6,9 @@ let current_word = ""
 let entered = []
 let game_over = false
 
+const win_messages = ["congrats", "brilliant", "well done", "you got it", "awesome"]
+const lost_messages = ["welp... better luck next time", "you missed it...", "well you can try again next time"]
+
 // fetch initial data from .json
 const fetch_data = async () => {
     await fetch("data/words.json").then(res => res.json()).then(json => {
@@ -22,18 +25,10 @@ const set_random_word = () => {
 // word checking
 
 const check_word = (word) => {
-    if (word == current_word) {
-        return 1
-    }
-    else if (allowed_words.includes(word)) {
-        return 0
-    }
-    else if (valid_words.includes(word)) {
-        return 0
-    }
-    else {
-        return -1
-    }
+    if (word == current_word) { return 1 }
+    else if (allowed_words.includes(word)) { return 0 }
+    else if (valid_words.includes(word)) { return 0 }
+    else { return -1 }
 }
 
 const check_hints = (word) => {
@@ -57,7 +52,9 @@ const key_pressed = (key) => {
      }
 
     if (key == "enter") {
-        if (entered.length < 5) { return }
+        if (entered.length < 5) { 
+            show_message("5 letter words only")
+        }
         // if all 5 letters are in place, then check the word
         else {
             let included = check_word(entered.join(""))
@@ -77,7 +74,7 @@ const key_pressed = (key) => {
                 entered = []
             }
             else if (included == -1) {
-                alert("NOT IN THE LIST, ENTER ANOTHER WORD **APP.JS, KEY_PRESSED METHOD")
+                show_message("invalid word")
             }
         }
     }
@@ -129,13 +126,15 @@ const round_over = (condition) => {
     // setTimeout so user can see the results for a few seconds ;)
     setTimeout(() => {
         if (condition == 1) {
-            alert("CONGRATS! YOU WIN!!! :D")
+            let main_msg = win_messages[Math.floor( Math.random() * win_messages.length )]
+            show_message(main_msg, `you guessed "${current_word}" correctly!`)
         }
         else {
-            alert("PRESS OK TO TRY AGAIN")
+            let main_msg = lost_messages[Math.floor( Math.random() * lost_messages.length )]
+            show_message(main_msg, `the correct word was "${current_word}"`)
         }
-        restart()
-    }, 2000)
+        setTimeout(restart, 3600)
+    }, 1000)
 }
 
 const restart = () => {

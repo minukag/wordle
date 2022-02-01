@@ -5,6 +5,7 @@
     --accent-col: #ff6565;
     --green-col: #00c9a2;
     --yellow-col: #f9f871;
+    --accent-col-trans: #ff656588;
 }
 
 * {
@@ -111,9 +112,42 @@ main {
     animation-direction: reverse;
 }
 
+.popup {
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    top: -20%; /* 25% is full down */
+    left: 50%;
+    width: 300px;
+    border-radius: 12px;
+    background-color: var(--accent-col-trans);
+    backdrop-filter: blur(10px);
+    color: var(--bg-col);
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+    transition: .6s;
+}
+
+.popup-sub-hidden {
+    display: none;
+}
+
+.animate-zoom-down-in {
+    top: 25%;
+    transform: translate(-50%, -50%) scale(1);
+    animation: zoom-down-in .6s ease;
+}
+
 @keyframes beat-in-out {
     0%      { transform: scale(1); }
     25%     { transform: scale(.95); }
     75%     { transform: scale(1.05); }
     100%    { transform: scale(1); }
+}
+
+@keyframes zoom-down-in {
+    0%      { transform: translate(-50%, -50%) scale(0); top: -20%; }
+    60%     { transform: translate(-50%, -50%) scale(1.05); top: 25%; }
+    80%     { transform: translate(-50%, -50%) scale(.95); top: 25%; }
+    100%     { transform: translate(-50%, -50%) scale(1); top: 25%; }
 }

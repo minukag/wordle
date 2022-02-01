@@ -53,9 +53,23 @@ const enter_word = (word, hints) => {
     current_letter = 0
 }
 
-const animate_element = (element, animation) => {
+const show_message = (main, sub = null) => {
+    const popup = document.getElementById("msg-alert")
+    const subtext = document.getElementById("msg-alert-sub")
+    document.getElementById("msg-alert-main").textContent = main
+    if (sub) {
+        subtext.classList.remove("popup-sub-hidden")
+        subtext.textContent = sub
+    }
+    else { subtext.classList.add("popup-sub-hidden") }
+    
+    // toggle the popup animation to fade away in 2500+600 ms (3100)
+    animate_element(popup, "zoom-down-in", 3000)
+}
+
+const animate_element = (element, animation, timing = 200) => {
     element.classList.add(`animate-${animation}`)
         setTimeout(() => {
             element.classList.remove(`animate-${animation}`)
-        }, 200)
+        }, timing)
 }
