@@ -132,10 +132,96 @@ main {
     display: none;
 }
 
+.help-modal {
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    border-radius: 12px;
+    background-color: var(--accent-col-trans);
+    backdrop-filter: blur(10px);
+    color: var(--bg-col);
+    padding: 2rem 1rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: .6s;
+}
+
+.hm-title {
+    text-align: center;
+}
+
+.hm-desc {
+    text-align: justify;
+}
+
+.hm-keys {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hm-keys-element {
+    display: flex;
+    flex-direction: row;
+    gap: .8rem;
+    align-items: center;
+}
+
+.hm-enter-to-play {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.hm-key-game {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--bg-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.2em;
+}
+
+.hm-kg-out {
+    background-color: var(--accent-dark-col);
+}
+
+.hm-kg-yellow {
+    background-color: var(--yellow-col);
+}
+
+.hm-kg-green {
+    background-color: var(--green-col);
+}
+
+.hm-key-key {
+    background-color: var(--bg-col);
+    color: var(--accent-col);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: .8em;
+    width: min-content;
+}
+
 .animate-zoom-down-in {
     top: 25%;
     transform: translate(-50%, -50%) scale(1);
     animation: zoom-down-in .6s ease;
+}
+
+.animate-zoom-down-in-center {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    animation: zoom-down-in-center .6s ease;
 }
 
 @keyframes beat-in-out {
@@ -150,4 +236,11 @@ main {
     60%     { transform: translate(-50%, -50%) scale(1.05); top: 25%; }
     80%     { transform: translate(-50%, -50%) scale(.95); top: 25%; }
     100%     { transform: translate(-50%, -50%) scale(1); top: 25%; }
+}
+
+@keyframes zoom-down-in-center {
+    0%      { transform: translate(-50%, -50%) scale(0); top: -50%; }
+    60%     { transform: translate(-50%, -50%) scale(1.05); top: 50%; }
+    80%     { transform: translate(-50%, -50%) scale(.95); top: 50%; }
+    100%     { transform: translate(-50%, -50%) scale(1); top: 50%; }
 }

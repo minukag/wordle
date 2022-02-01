@@ -16,8 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/app.css">
-    <script src="app.js"></script>
-    <script src="ui.js"></script>
+    <script src="app.js" defer></script>
+    <script src="ui.js" defer></script>
 </head>
 <body>
     <main>
@@ -219,11 +219,66 @@
                 </div>
             </div>
         </div>
-    </main>
+        
+        <div id="msg-alert" class="popup">
+            <h3 id="msg-alert-main" class="popup-main">HELLO WORLD</h3>
+            <h5 id="msg-alert-sub" class="popup-sub">Welcome to Wordle</h5>
+        </div>
 
-    <div id="msg-alert" class="popup">
-        <h3 id="msg-alert-main" class="popup-main">HELLO WORLD</h3>
-        <h5 id="msg-alert-sub" class="popup-sub">Welcome to Wordle</h5>
-    </div>
+        <div id="help-modal" class="help-modal animate-zoom-down-in-center">
+            <div class="hm-title">
+                <h1>WORDLE</h1>
+                <h5>BY MINUKAG</h5>
+            </div>
+
+            <div class="hm-desc">
+                <p>WORDLE is a web-based puzzle game where players have to guess a random 5 letter word within 6 tries.</p>
+            </div>
+
+            <div class="hm-keys">
+                <div class="hm-keys-element hm-instruction-game">
+                    <div class="hm-key-game hm-kg-out">
+                        <span>A</span>
+                    </div>
+                    <p>Letter is not present in the word</p>
+                </div>
+
+                <div class="hm-keys-element hm-instruction-game">
+                    <div class="hm-key-game hm-kg-yellow">
+                        <span>B</span>
+                    </div>
+                    <p>Letter is present but in a different spot</p>
+                </div>
+
+                <div class="hm-keys-element hm-instruction-game">
+                    <div class="hm-key-game hm-kg-green">
+                        <span>C</span>
+                    </div>
+                    <p>Letter is present in the correct spot</p>
+                </div>
+
+                <div class="hm-keys-element hm-instruction-key">
+                    <div class="hm-key-key">
+                        <span>ENTER</span>
+                    </div>
+                    <p>TO ENTER YOUR GUESS</p>
+                </div>
+
+                <div class="hm-keys-element hm-instruction-key">
+                    <div class="hm-key-key">
+                        <span>BACKSPACE</span>
+                    </div>
+                    <p>TO ERASE A LETTER</p>
+                </div>
+            </div>
+
+            <div class="hm-enter-to-play">
+                <div class="hm-key-key">
+                    <span>ENTER</span>
+                </div>
+                <p>TO START PLAYING</p>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

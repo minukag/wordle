@@ -4,7 +4,8 @@ let allowed_words = []
 let valid_words = []
 let current_word = ""
 let entered = []
-let game_over = false
+let game_over = true
+let help_modal = true
 
 const win_messages = ["congrats", "brilliant", "well done", "you got it", "awesome"]
 const lost_messages = ["welp... better luck next time", "you missed it...", "well you can try again next time"]
@@ -47,6 +48,14 @@ const check_hints = (word) => {
 // key press event listener
 
 const key_pressed = (key) => {
+    // start the game when help modal is closed
+    if (help_modal == true && key == "enter") {
+        hide_instructions()
+        setTimeout(() => {
+            init()
+        }, 600)
+        return
+    }
     if (game_over == true) { 
         return
      }
@@ -147,9 +156,8 @@ const restart = () => {
 const init = async () => {
     await fetch_data()
     set_random_word()
+    game_over = false
 }
-
-init()
 
 
 

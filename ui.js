@@ -67,6 +67,12 @@ const show_message = (main, sub = null) => {
     animate_element(popup, "zoom-down-in", 3000)
 }
 
+const hide_instructions = () => {
+    const modal = document.getElementById("help-modal")
+    modal.classList.remove("animate-zoom-down-in-center")
+    help_modal = false
+}
+
 const animate_element = (element, animation, timing = 200) => {
     element.classList.add(`animate-${animation}`)
         setTimeout(() => {
